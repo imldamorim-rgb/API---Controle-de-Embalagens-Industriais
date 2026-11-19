@@ -18,6 +18,8 @@ export async function cadastrar(req, res) {
         return res.status(201).json({mensagem: 'Embalagem cadastrada com sucesso', id: resultado.insertId});
 
     } catch (erro){
+        console.log(erro)
+        
         return res.status(500).json({mensagem: 'Erro ao cadastrar embalagem'})
     }
 };

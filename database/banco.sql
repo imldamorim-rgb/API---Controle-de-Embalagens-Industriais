@@ -1,7 +1,7 @@
 CREATE DATABASE controle_embalagens;
 USE controle_embalagens;
 
-CREATE TABLE embalagens (
+CREATE TABLE embalagem (
 id_embalagem INT AUTO_INCREMENT PRIMARY KEY,
 descricao VARCHAR(100) NOT NULL,
 material VARCHAR(50) NOT NULL,
