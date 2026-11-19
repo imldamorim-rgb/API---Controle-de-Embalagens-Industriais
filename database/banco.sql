@@ -1,0 +1,23 @@
+CREATE DATABASE controle_embalagens;
+USE controle_embalagens;
+
+CREATE TABLE embalagens (
+id_embalagem INT AUTO_INCREMENT PRIMARY KEY,
+descricao VARCHAR(100) NOT NULL,
+material VARCHAR(50) NOT NULL,
+capacidade DECIMAL(10,2) NOT NULL
+);
+
+CREATE TABLE maquinas (
+id_maquina INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(100) NOT NULL,
+patrimonio VARCHAR(50) NOT NULL,
+status VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE operador (
+id_operador INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(100) NOT NULL,
+matricula VARCHAR(100) NOT NULL,
+turno VARCHAR(50) NOT NULL
+)
