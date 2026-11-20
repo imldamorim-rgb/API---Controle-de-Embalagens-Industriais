@@ -28,7 +28,7 @@ export async function buscarOperadorPorId(id) {
 };
 
 export async function atualizarOperador(id, operador) {
-    const sql = 'UPDATE operador SET nome = ?, matricula = ?, turno = ? WHERE id_maquina = ?;'
+    const sql = 'UPDATE operador SET nome = ?, matricula = ?, turno = ? WHERE id_operador = ?;'
     const [resultado] = await conexao.execute(sql, [
         operador.nome,
         operador.matricula,
@@ -41,7 +41,7 @@ export async function atualizarOperador(id, operador) {
 };
 
 export async function excluirOperador(id) {
-    const sql = 'DELET FROM operador WHERE id_operador = ?'
+    const sql = 'DELETE FROM operador WHERE id_operador = ?'
     const [resultado] = await conexao.execute(sql, [id]);
 
     return resultado;

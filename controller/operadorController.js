@@ -18,13 +18,15 @@ export async function cadastrar(req, res) {
         return res.status(201).json({mensagem: 'Operador cadastrada com sucesso', id: resultado.insertId});
 
     } catch (erro){
+        console.log(erro)
+
         return res.status(500).json({mensagem: 'Erro ao cadastrar operador'})
     }
 };
 
 export async function listar(req, res) {
     try {
-        const operadores = await listarOperador();
+        const operadores = await listarOperadores();
         return res.status(200).json(operadores);
 
     } catch (erro) {
@@ -63,7 +65,7 @@ export async function atualizar(req, res){
         
         const operadorAtual = await buscarOperadorPorId(id);
         if(!operadorAtual) {
-            return res.status(404).json({mensagem: 'Operador não encontrada'});
+            return res.status(404).json({mensagem: 'Operador não encontrado'});
         }
 
         const operador = new Operador(req.body.nome ?? operadorAtual.nome,
@@ -82,6 +84,8 @@ export async function atualizar(req, res){
         return res.status(200).json({mensagem: 'Operador atualizada com sucesso'});
 
     } catch (erro) {
+        console.log(erro)
+
         return res.status(500).json({mensagem: 'Erro ao atualizar operador'})
     }
 };
@@ -104,6 +108,8 @@ export async function excluir(req, res){
         return res.status(200).json({mensagem: 'Operador excluído com sucesso'});
 
     } catch (erro) {
+        console.log(erro)
+        
         return res.status(500).json({mensagem: 'Erro ao excluir operador'})
     }
 };

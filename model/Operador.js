@@ -1,8 +1,8 @@
 export class Operador {
-    constructor(nome, matricula, status){
+    constructor(nome, matricula, turno){
         this.nome = nome,
         this.matricula = matricula,
-        this.status = status
+        this.turno = turno
     }
 
     validar() {
@@ -14,8 +14,8 @@ export class Operador {
             return 'A matrícula não pode ficar vazio'
         };
 
-        if(!this.status || !this.status.trim()) {
-            return 'O status não pode ficar vazio'
+        if(!this.turno || !this.turno.trim()) {
+            return 'O turno não pode ficar vazio'
         };
 
         return null;

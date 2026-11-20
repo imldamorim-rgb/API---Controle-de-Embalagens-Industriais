@@ -41,7 +41,7 @@ export async function atualizarMaquina(id, maquina) {
 };
 
 export async function excluirMaquina(id) {
-    const sql = 'DELET FROM maquina WHERE id_maquina = ?'
+    const sql = 'DELETE FROM maquina WHERE id_maquina = ?'
     const [resultado] = await conexao.execute(sql, [id]);
 
     return resultado;

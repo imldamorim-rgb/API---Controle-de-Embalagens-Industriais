@@ -18,6 +18,8 @@ export async function cadastrar(req, res) {
         return res.status(201).json({mensagem: 'Maquina cadastrada com sucesso', id: resultado.insertId});
 
     } catch (erro){
+        console.log(erro)
+
         return res.status(500).json({mensagem: 'Erro ao cadastrar maquina'})
     }
 };
@@ -40,7 +42,7 @@ export async function buscarPorId(req, res) {
             return res.status(400).json({mensagem: 'ID inválido'})
         }
 
-        const embalagem = await buscarMaquinaPorId(id);
+        const maquina = await buscarMaquinaPorId(id);
 
         if(!maquina) {
             return res.status(404).json({mensagem: 'Maquina não encontrada'});
@@ -49,6 +51,8 @@ export async function buscarPorId(req, res) {
         return res.status(200).json(maquina);
 
     } catch (erro) {
+        console.log(erro)
+
         return res.status(500).json({mensagem: 'Erro ao buscar maquina'})
     }
 };
@@ -104,6 +108,8 @@ export async function excluir(req, res){
         return res.status(200).json({mensagem: 'Maquina excluída com sucesso'});
 
     } catch (erro) {
+        console.log(erro)
+        
         return res.status(500).json({mensagem: 'Erro ao excluir maquina'})
     }
 };
